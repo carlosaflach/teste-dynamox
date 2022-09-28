@@ -1,0 +1,21 @@
+.loginPage {
+  align-items: center;
+  display: flex;
+  font-size: 20px;
+  height: 100vh;
+  justify-content: center;
+  /* background-color: #999; */
+}
+
+.loginContent {
+    /* background-color: rgb(234, 241, 239); */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border: 1px solid black;
+    display: flex;
+    height: fit-content;
+    padding: 2rem 4rem;
+    width: 32rem;
+    border-radius: 1rem;
+}
