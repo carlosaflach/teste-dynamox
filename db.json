@@ -4,6 +4,7 @@
       "id": 1,
       "name": "Banana",
       "isPerishable": true,
+      "manufacturingDate": "2022-10-10",
       "expirationDate": "2022-10-20",
       "price": 2.99,
       "unity": "1 kg"
@@ -12,6 +13,7 @@
       "id": 2,
       "name": "Rice",
       "isPerishable": false,
+      "manufacturingDate": "2022-10-10",
       "expirationDate": "2025-12-01",
       "price": 15.95,
       "unity": "5 kg"
@@ -19,6 +21,7 @@
     {
       "name": "Avocado",
       "isPerishable": true,
+      "manufacturingDate": "2022-10-10",
       "expirationDate": "2022-10-02",
       "price": 6.99,
       "unity": "1 kg",
@@ -37,7 +40,18 @@
       "userEmail": "fulando_da_silva@email.com",
       "username": "fulano da silva",
       "userPassword": "secret123"
+    },
+    {
+      "userEmail": "carlos.flach15@trybe.com",
+      "username": "Carlos",
+      "userPassword": "123456",
+      "id": 3
+    },
+    {
+      "userEmail": "carlos@test.com",
+      "username": "cacalo",
+      "userPassword": "123456",
+      "id": 4
     }
   ]
-  
 }

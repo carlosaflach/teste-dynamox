@@ -9,7 +9,7 @@ import axios from 'axios';
 import createToken from '../Services/generateToken';
 import { setLocalStorage } from '../Services/handleLocalStorage';
 import { setLogin } from '../Redux/Slices/login';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -23,6 +23,8 @@ export default function Login() {
   const handleClick = () => setShow(!show);
   const dispatch = useDispatch();
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const mailValidator = regexEmail.test(email);
@@ -35,7 +37,8 @@ export default function Login() {
   }, [email, password]);
 
 
-  const handleLogin = async () => {
+  const handleLogin = async (e) => {
+    e.preventDefault()
     const {data} = await axios.get(`http://localhost:3001/users/${email}`)
     if(!data || data.length === 0) {
       setErr('Usuário não encontrado');
@@ -92,12 +95,12 @@ export default function Login() {
             </InputGroup>
           </label>
         </div>
-        <div>
+        <div className={styles.btns}>
           <Button
             colorScheme="teal"
             size="md"
             disabled={!enableButton}
-            onClick={handleLogin}
+            onClick={(e) => {handleLogin(e)}}
             width="sm"
           >
             Login
@@ -109,7 +112,16 @@ export default function Login() {
               {err}
             </p>
           ) : null}
+          <Button
+            colorScheme="teal"
+            size="md"
+            width="sm"
+            onClick={() => navigate('/register') }
+          >
+            Register
+          </Button>
         </div>
+
       </form>
     </div>
   );

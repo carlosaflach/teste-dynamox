@@ -19,3 +19,9 @@
     width: 32rem;
     border-radius: 1rem;
 }
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

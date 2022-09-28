@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import { Navigate, Outlet, Route,  } from 'react-router-dom';
-import { getLocalToken, isAuthenticated } from '../Services/handleLocalStorage'
+import { Navigate, Outlet  } from 'react-router-dom';
+import { getLocalToken } from '../Services/handleLocalStorage'
 
 const PrivateRoute = (props) => {
   const user = useSelector((state) => state.login);
