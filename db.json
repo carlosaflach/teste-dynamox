@@ -28,15 +28,15 @@
   "users": [
     {
       "id": 1,
-      "email": "ciclano@ciclano.com",
-      "nome": "admin",
-      "password": "secret_ciclano"
+      "userEmail": "ciclano@ciclano.com",
+      "username": "ciclano",
+      "userPassword": "secret_ciclano"
     },
     {
       "id": 2,
-      "email": "fulando_da_silva@email.com",
-      "nome": "fulano da silva",
-      "password": "secret123"
+      "userEmail": "fulando_da_silva@email.com",
+      "username": "fulano da silva",
+      "userPassword": "secret123"
     }
   ]
   

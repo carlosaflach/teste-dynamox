@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -11,8 +10,8 @@ export const loginSlice = createSlice({
   initialState,
   reducers: {
     setLogin: (state, action) => {
-      state.email = action.payload.email;
-      state.userName = action.payload.password;
+      state.email = action.payload.userEmail;
+      state.userName = action.payload.username;
     },
     // increment: (state) => {
     //   // Redux Toolkit allows us to write "mutating" logic in reducers. It

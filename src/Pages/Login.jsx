@@ -3,20 +3,25 @@ import {
   Button, Input, InputGroup, InputRightElement,
 } from '@chakra-ui/react';
 
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import styles from '../styles/login.module.css';
-// import { setLogin } from '../Redux/Slices/login';
+import axios from 'axios';
+import createToken from '../Services/generateToken';
+import { setLocalStorage } from '../Services/handleLocalStorage';
+import { setLogin } from '../Redux/Slices/login';
+import { Navigate } from 'react-router-dom';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [enableButton, setEnableButton] = useState(false);
-  // const [loading, setLoading] = useState(false);
-  // const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(false);
+  const [err, setErr] = useState('')
   const [failedTryLogin, setFailedTryLogin] = useState(false);
   const [show, setShow] = useState(false);
+  const [isAuth, setIsAuth] = useState(false);
   const handleClick = () => setShow(!show);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -26,9 +31,32 @@ export default function Login() {
     const isValid = mailValidator && passValid;
     setEnableButton(isValid);
     setFailedTryLogin(false);
+    setIsAuth(false);
   }, [email, password]);
 
 
+  const handleLogin = async () => {
+    const {data} = await axios.get(`http://localhost:3001/users/${email}`)
+    if(!data || data.length === 0) {
+      setErr('Usuário não encontrado');
+      setFailedTryLogin(true);
+      return
+    }
+    if(password !== data[0].userPassword) {
+      setErr('Password Inválido');
+      setFailedTryLogin(true);
+      return
+    }
+    const token = createToken();
+    setIsAuth(true);
+    const { userEmail, username } = { ...data[0]}
+    const AUTH = "@login-token"
+    setLocalStorage(AUTH, {userEmail, token});
+    dispatch(setLogin({userEmail, username}));
+    setIsLogged(true);
+  };  
+
+  if(isLogged && isAuth) return <Navigate to='/products' />
 
   return (
     <div className={styles.loginPage}>
@@ -69,7 +97,7 @@ export default function Login() {
             colorScheme="teal"
             size="md"
             disabled={!enableButton}
-            
+            onClick={handleLogin}
             width="sm"
           >
             Login
@@ -78,7 +106,7 @@ export default function Login() {
             <p
               data-testid="common_login__element-invalid-email"
             >
-              Usuário não encontrado
+              {err}
             </p>
           ) : null}
         </div>
