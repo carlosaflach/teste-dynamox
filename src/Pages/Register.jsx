@@ -10,7 +10,6 @@ export default function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
-  const [registered, setRegistered] = useState(false);
   const [enableButton, setEnableButton] = useState(false);
 
   const navigate = useNavigate();
@@ -24,7 +23,6 @@ export default function Register() {
     const passValid = password.length >= passMinLength;
     const isValid = mailValidator && passValid && isNameValid;
     setEnableButton(isValid);
-    setRegistered(false);
   }, [email, name, password]);
 
   const handleClick = async (e) => {
@@ -34,7 +32,6 @@ export default function Register() {
       username: name,
       userPassword: password
     });
-    setRegistered(true);
     navigate('/login');
   }
 
