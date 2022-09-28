@@ -2,7 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import Login from './Pages/Login';
 import PageNotFound from './Pages/PageNotFound';
 import Products from './Pages/Products';
-import PrivateRoute from './Routes/PrivateRoute';
+import PrivateRoute from './Rotas/PrivateRoute';
 import Register from './Pages/Register';
 
 function App() {

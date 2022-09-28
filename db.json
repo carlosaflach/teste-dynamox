@@ -52,6 +52,18 @@
       "username": "cacalo",
       "userPassword": "123456",
       "id": 4
+    },
+    {
+      "userEmail": "carlos.flach15@gmail.com",
+      "username": "Carlos",
+      "userPassword": "123456",
+      "id": 5
+    },
+    {
+      "userEmail": "emeli@test.com",
+      "username": "emeli",
+      "userPassword": "123456",
+      "id": 6
     }
   ]
 }

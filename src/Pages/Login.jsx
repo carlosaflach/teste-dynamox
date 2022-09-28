@@ -39,9 +39,14 @@ export default function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault()
-    const {data} = await axios.get(`http://localhost:3001/users/${email}`)
+    const {data} = await axios.get(`http://localhost:3001/users?userEmail=${email}`)
     if(!data || data.length === 0) {
       setErr('Usuário não encontrado');
+      setFailedTryLogin(true);
+      return
+    }
+    if(email !== data[0].userEmail) {
+      setErr('Email Inválido');
       setFailedTryLogin(true);
       return
     }
