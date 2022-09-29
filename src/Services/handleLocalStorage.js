@@ -6,8 +6,12 @@ const AUTH = "@login-token"
 
 export const isAuthenticated = () => !!localStorage.getItem(AUTH)
 
+export const logout = () => localStorage.removeItem(AUTH);
+
 export const getLocalToken = () => {
   const obj = JSON.parse(localStorage.getItem(AUTH));
   return obj;
 }
+
+
 

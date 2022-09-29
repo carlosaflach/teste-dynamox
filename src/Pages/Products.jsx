@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 import ProductCard from "../Components/ProductCard";
 import styles from "../styles/product.module.css";
 import { productsToState } from "../Redux/Slices/products";
-import { Button } from '@chakra-ui/react'
+import Header from "../Components/Header";
 
 export default function Products() {
   const [products, setProducts] = useState([]);
@@ -19,32 +19,45 @@ export default function Products() {
   };
 
   const sendProductsToState = () => {
-    if(products.length > 0) dispacth(productsToState(products))
+    if (products.length > 0) dispacth(productsToState(products));
   };
 
   useEffect(() => {
-    sendProductsToState()
-  }, [products])
+    sendProductsToState();
+  }, [products]);
 
   useEffect(() => {
-    getProducts()
+    getProducts();
   }, []);
 
   return (
+    <>
+    <Header />
     <div className={styles.producs_page}>
       {products &&
-        products.map(({name, isPerishable, manufacturingDate, expirationDate, price, unity, imgUrl}) => (
-        <ProductCard key={name} 
-          name={name}
-          isPerishable={isPerishable}
-          manufacturingDate={manufacturingDate}
-          expirationDate={expirationDate}
-          price={price}
-          unity={unity}
-          imgUrl={imgUrl}
-        />
-        ))}
-      <Button colorScheme='green' className={styles.producs_page__btn}>Novo Produto</Button>
+        products.map(
+          ({
+            name,
+            isPerishable,
+            manufacturingDate,
+            expirationDate,
+            price,
+            unity,
+            imgUrl,
+          }) => (
+            <ProductCard
+              key={name}
+              name={name}
+              isPerishable={isPerishable}
+              manufacturingDate={manufacturingDate}
+              expirationDate={expirationDate}
+              price={price}
+              unity={unity}
+              imgUrl={imgUrl}
+            />
+          )
+        )}
     </div>
+    </>
   );
 }

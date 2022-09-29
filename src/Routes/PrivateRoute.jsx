@@ -1,12 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
+
 import { Navigate, Outlet } from "react-router-dom";
-import { getLocalToken } from "../Services/handleLocalStorage";
+import { isAuthenticated } from "../Services/handleLocalStorage";
 
 const PrivateRoute = () => {
-  const user = useSelector((state) => state.login);
-  const local = getLocalToken();
-  const auth = user.email === local.userEmail;
+  const auth = isAuthenticated()
 
   return (
       auth ?  <Outlet /> : <Navigate to="/login" />
