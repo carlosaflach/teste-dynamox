@@ -1,6 +1,7 @@
 import PropTypes from "prop-types"
 import React from 'react'
 import { Image } from '@chakra-ui/react'
+import { formatDate } from "../Services/handleDate"
 
 import styles from '../styles/product.module.css'
 
@@ -18,8 +19,8 @@ export default function ProductCard({name, isPerishable, manufacturingDate, expi
         />
       </div>
       <div className={styles.product_cart__date}>
-        <p>Data de Fabricação: {manufacturingDate}</p>
-        <p>Data de Validade: {expirationDate}</p>
+        <p>Data de Fabricação: {formatDate(manufacturingDate)}</p>
+        <p>Data de Validade: {formatDate(expirationDate)}</p>
         <p>Produto perecível: {isPerishable ? 'Sim' : 'Não'}</p>
       </div>
       <div className={styles.product_cart__price}>
