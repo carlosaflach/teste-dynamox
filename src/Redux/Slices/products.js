@@ -9,11 +9,15 @@ export const productsSlice = createSlice({
     productsToState: (state, action) => {
       state.push(...action.payload);
     },
-
+    clearProducts:(state) => {
+      while(state.length) {
+        state.pop()
+      }
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { productsToState } = productsSlice.actions;
+export const { productsToState, clearProducts } = productsSlice.actions;
 
 export default productsSlice.reducer;

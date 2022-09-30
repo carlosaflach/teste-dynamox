@@ -1,42 +1,38 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
 import ProductCard from "../Components/ProductCard";
 import styles from "../styles/product.module.css";
 import { productsToState } from "../Redux/Slices/products";
 import Header from "../Components/Header";
 
 export default function Products() {
-  const [products, setProducts] = useState([]);
-
-  const navigate = useNavigate();
+  const [refresh, setRefresh] = useState(false);
   const dispacth = useDispatch();
+  const products = useSelector((state) => state.products);
 
   const getProducts = async () => {
     const { data } = await axios.get("http://localhost:3001/products");
-    setProducts(data);
+    dispacth(productsToState(data));
   };
-
-  const sendProductsToState = () => {
-    if (products.length > 0) dispacth(productsToState(products));
-  };
-
-  useEffect(() => {
-    sendProductsToState();
-  }, [products]);
 
   useEffect(() => {
     getProducts();
   }, []);
 
+  useEffect(() => {
+
+  }, [products])
+
   return (
     <>
     <Header />
     <div className={styles.producs_page}>
+      {products && console.log(products)}
       {products &&
         products.map(
           ({
+            id,
             name,
             isPerishable,
             manufacturingDate,
@@ -47,6 +43,7 @@ export default function Products() {
           }) => (
             <ProductCard
               key={name}
+              id={id}
               name={name}
               isPerishable={isPerishable}
               manufacturingDate={manufacturingDate}
@@ -54,6 +51,8 @@ export default function Products() {
               price={price}
               unity={unity}
               imgUrl={imgUrl}
+              setRefresh={setRefresh}
+              getProducts={getProducts}
             />
           )
         )}

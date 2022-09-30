@@ -1,0 +1,54 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Banana",
+      "isPerishable": true,
+      "manufacturingDate": "2022-10-10",
+      "expirationDate": "2022-10-20",
+      "price": 2.99,
+      "unity": "1 kg",
+      "imgUrl": "https://images.unsplash.com/photo-1587334206596-c0f9f7dccbe6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=881&q=80"
+    },
+    {
+      "id": 2,
+      "name": "Rice",
+      "isPerishable": false,
+      "manufacturingDate": "2022-10-10",
+      "expirationDate": "2025-12-01",
+      "price": 15.95,
+      "unity": "5 kg",
+      "imgUrl": "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    },
+    {
+      "name": "Avocado",
+      "isPerishable": true,
+      "manufacturingDate": "2022-10-10",
+      "expirationDate": "2022-10-02",
+      "price": 6.99,
+      "unity": "1 kg",
+      "id": 3,
+      "imgUrl": "https://images.unsplash.com/photo-1557925922-dac32ff4429f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "userEmail": "ciclano@ciclano.com",
+      "username": "ciclano",
+      "userPassword": "secret_ciclano"
+    },
+    {
+      "id": 2,
+      "userEmail": "fulando_da_silva@email.com",
+      "username": "fulano da silva",
+      "userPassword": "secret123"
+    },
+    {
+      "userEmail": "carlos.flach15@gmail.com",
+      "username": "Carlos",
+      "userPassword": "123456",
+      "id": 3
+    }
+  ]
+}

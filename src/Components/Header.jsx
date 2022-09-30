@@ -3,13 +3,17 @@ import { Button } from "@chakra-ui/react";
 import styles from '../styles/header.module.css';
 import { useNavigate } from 'react-router';
 import { logout } from '../Services/handleLocalStorage';
+import { useDispatch } from 'react-redux';
+import { clearProducts } from '../Redux/Slices/products';
 
 
 export default function Header() {
   const navigate = useNavigate()
+  const dispatch = useDispatch();
 
   const handleClick = () => {
     logout();
+    dispatch(clearProducts())
     navigate('/login');
   }
 
