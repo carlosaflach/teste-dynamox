@@ -79,3 +79,7 @@ p {
     width: 32rem;
     border-radius: 1rem;
 }
+
+.product_cart__create_new_product__btn {
+  margin: 1rem 2rem;
+}

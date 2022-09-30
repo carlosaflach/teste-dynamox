@@ -21,10 +21,11 @@ export default function ProductCard({
   imgUrl,
   getProducts
 }) {
-  const dispacth = useDispatch()
+  const dispatch = useDispatch()
+  
   const handleDelete = async (id) => {
      await axios.delete(`http://localhost:3001/products/${id}`);
-    dispacth(clearProducts());
+     dispatch(clearProducts());
     getProducts();
   };
 
@@ -49,7 +50,7 @@ export default function ProductCard({
         <p>Produto perecível: {isPerishable ? "Sim" : "Não"}</p>
       </div>
       <div className={styles.product_cart__price}>
-        <p>Preço: {price}</p>
+        <p>Preço: R$ {Number(price).toFixed(2)}</p>
         <p>Unidade: {unity}</p>
       </div>
       <div>
@@ -67,7 +68,7 @@ export default function ProductCard({
 
 ProductCard.propTypes = {
   expirationDate: PropTypes.string.isRequired,
-  isPerishable: PropTypes.bool.isRequired,
+  isPerishable: PropTypes.string.isRequired,
   manufacturingDate: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,

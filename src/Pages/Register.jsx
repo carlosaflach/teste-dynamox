@@ -5,6 +5,7 @@ import {
 import styles from '../styles/login.module.css';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
+import Header from '../Components/Header';
 
 export default function Register() {
   const [email, setEmail] = useState('');
@@ -36,6 +37,8 @@ export default function Register() {
   }
 
   return (
+    <>
+    <Header />
     <div className={styles.loginPage}>
       <form className={styles.loginContent}>
         <div>
@@ -43,7 +46,7 @@ export default function Register() {
             Email:
             <Input
               id="email"
-              placeholder="Email"
+              placeholder="Insira o seu email"
               size="lg"
               value={email}
               onChange={(e) => { setEmail(e.target.value); }}
@@ -52,10 +55,10 @@ export default function Register() {
         </div>
         <div>
           <label htmlFor="name">
-            Name:
+            Nome:
             <Input
               id="name"
-              placeholder="Name"
+              placeholder="Insira o seu nome"
               size="lg"
               value={name}
               onChange={(e) => { setName(e.target.value); }}
@@ -67,7 +70,7 @@ export default function Register() {
             Password:
             <Input
               id="password"
-              placeholder="Password"
+              placeholder="Insira o seu password"
               size="lg"
               value={password}
               onChange={(e) => { setPassword(e.target.value); }}
@@ -88,5 +91,6 @@ export default function Register() {
 
       </form>
     </div>
+    </>
   )
 }

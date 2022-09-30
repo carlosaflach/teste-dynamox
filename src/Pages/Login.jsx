@@ -102,7 +102,7 @@ export default function Login() {
         </div>
         <div className={styles.btns}>
           <Button
-            colorScheme="teal"
+            colorScheme="green"
             size="md"
             disabled={!enableButton}
             onClick={(e) => {handleLogin(e)}}
@@ -118,7 +118,7 @@ export default function Login() {
             </p>
           ) : null}
           <Button
-            colorScheme="teal"
+            colorScheme="green"
             size="md"
             width="sm"
             onClick={() => navigate('/register') }

@@ -29,6 +29,16 @@
       "unity": "1 kg",
       "id": 3,
       "imgUrl": "https://images.unsplash.com/photo-1557925922-dac32ff4429f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80"
+    },
+    {
+      "name": "Tomate",
+      "isPerishable": "Sim",
+      "manufacturingDate": "2022-09-29",
+      "expirationDate": "2022-10-02",
+      "price": "5",
+      "unity": "1 kg",
+      "imgUrl": "https://images.unsplash.com/photo-1608022749628-3251d92cdd79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "id": 4
     }
   ],
   "users": [
