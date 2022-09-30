@@ -7,6 +7,7 @@ import {
   InputRightElement,
   Select,
 } from "@chakra-ui/react";
+import { validateDate } from "../Services/handleDate";
 
 export default function CreateProducts() {
   const [name, setName] = useState("");
@@ -17,12 +18,24 @@ export default function CreateProducts() {
   const [price, setPrice] = useState('');
   const [unity, setUnity] = useState("");
   const [imgUrl, setImgUrl] = useState("");
+  const [isValidDate, setIsValidDate] = useState(true);
 
   useEffect(() => {
+    showExpirationInput()
+  }, [name, isPerishable, manufacturingDate,expirationDate, showExpDate, price, unity, imgUrl]);
+
+  useEffect(() => {
+    if(expirationDate !== '') {
+      const dateValid = validateDate(manufacturingDate, expirationDate);
+      setIsValidDate(dateValid)
+    }
+  }, [expirationDate])
+
+  const showExpirationInput = () => {
     if (isPerishable === "Sim") {
       setShowExpDate(true);
     }
-  }, [name, isPerishable, showExpDate, price, unity, imgUrl]);
+  }
 
   const handleSelect = (e) => {
     setIsPerishable(e.target.value);
@@ -89,6 +102,9 @@ export default function CreateProducts() {
             </label>
           </div>
         )}
+        { !isValidDate ? (
+          <span>Insira uma data de validade válida.</span>
+        ) : null}
         <div>
           <label htmlFor="price">
             Preço do Produto
