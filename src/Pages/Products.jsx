@@ -7,7 +7,6 @@ import { productsToState } from "../Redux/Slices/products";
 import Header from "../Components/Header";
 
 export default function Products() {
-  const [refresh, setRefresh] = useState(false);
   const dispacth = useDispatch();
   const products = useSelector((state) => state.products);
 
@@ -51,7 +50,6 @@ export default function Products() {
               price={price}
               unity={unity}
               imgUrl={imgUrl}
-              setRefresh={setRefresh}
               getProducts={getProducts}
             />
           )
