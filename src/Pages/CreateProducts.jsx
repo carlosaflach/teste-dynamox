@@ -77,9 +77,10 @@ export default function CreateProducts() {
   };
 
   const handleClick = async () => {
+    const perishable = isPerishable === 'Sim' ? true : false;
     await axios.post("http://localhost:3001/products", {
       name,
-      isPerishable,
+      isPerishable: perishable,
       manufacturingDate,
       expirationDate,
       price,

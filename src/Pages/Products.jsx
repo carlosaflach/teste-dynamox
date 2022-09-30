@@ -7,6 +7,7 @@ import { productsToState } from "../Redux/Slices/products";
 import Header from "../Components/Header";
 
 export default function Products() {
+  const [edit, setEdit] = useState(null);
   const dispacth = useDispatch();
   const products = useSelector((state) => state.products);
 
@@ -28,7 +29,7 @@ export default function Products() {
     <Header />
     <div className={styles.producs_page}>
       {products && console.log(products)}
-      {products &&
+      {products && 
         products.map(
           ({
             id,
@@ -40,18 +41,28 @@ export default function Products() {
             unity,
             imgUrl,
           }) => (
-            <ProductCard
-              key={name}
-              id={id}
-              name={name}
-              isPerishable={isPerishable}
-              manufacturingDate={manufacturingDate}
-              expirationDate={expirationDate}
-              price={price}
-              unity={unity}
-              imgUrl={imgUrl}
-              getProducts={getProducts}
-            />
+            <>
+            {edit === id ? (
+              null
+            ) 
+            : 
+            (
+              <ProductCard
+                key={name}
+                id={id}
+                name={name}
+                isPerishable={isPerishable}
+                manufacturingDate={manufacturingDate}
+                expirationDate={expirationDate}
+                price={price}
+                unity={unity}
+                imgUrl={imgUrl}
+                getProducts={getProducts}
+                setEdit={setEdit}
+              />
+            )}
+              
+            </>
           )
         )}
     </div>

@@ -80,6 +80,9 @@ p {
     border-radius: 1rem;
 }
 
-.product_cart__create_new_product__btn {
-  margin: 1rem 2rem;
+.product_cart__create_new_product__btns {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

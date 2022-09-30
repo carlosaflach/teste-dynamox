@@ -3,7 +3,7 @@ import React from "react";
 import { Image } from "@chakra-ui/react";
 import { formatDate } from "../Services/handleDate";
 import { IconButton } from "@chakra-ui/react";
-import { DeleteIcon } from '@chakra-ui/icons'
+import { DeleteIcon, EditIcon } from '@chakra-ui/icons'
 
 import styles from "../styles/product.module.css";
 import axios from "axios";
@@ -19,7 +19,8 @@ export default function ProductCard({
   price,
   unity,
   imgUrl,
-  getProducts
+  getProducts,
+  setEdit
 }) {
   const dispatch = useDispatch()
   
@@ -53,13 +54,20 @@ export default function ProductCard({
         <p>Preço: R$ {Number(price).toFixed(2)}</p>
         <p>Unidade: {unity}</p>
       </div>
-      <div>
+      <div className={styles.product_cart__create_new_product__btns}>
         <IconButton
           colorScheme="green"
           aria-label="Delete Product"
           size="sm"
           icon={<DeleteIcon />}
           onClick={() => handleDelete(id)}
+        />
+        <IconButton
+          colorScheme="green"
+          aria-label="Delete Product"
+          size="sm"
+          icon={<EditIcon />}
+          onClick={setEdit(id)}
         />
       </div>
     </div>
