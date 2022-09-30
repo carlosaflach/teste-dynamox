@@ -81,8 +81,6 @@ const validateButton = () => {
   const isValidUnity = unitEdit.length >= 3;
   const isValidExpDate = expDateEdit === '' ? true : validateDate(manDateEdit,expDateEdit);
 
-  console.log(isValidName, isValidPerishable, isValidManDate, isValidPrice, isValidUnity )
-
   const freeButton =
     isValidName &&
     isValidPerishable &&
@@ -95,7 +93,6 @@ const validateButton = () => {
 
 const handleSelect = (e) => {
   setPerishableEdit(e.target.value);
-  console.log(perishableEdit)
   setShowExpDate(false);
 };
 
@@ -147,7 +144,6 @@ const handleSelect = (e) => {
             size="xs"
           />
         </label>
-        {console.log(showExpDate)}
         {showExpDate && (
             <div>
               <label htmlFor="expirexpDateEditationDate">

@@ -6,8 +6,6 @@ import styles from "../styles/product.module.css";
 import { productsToState } from "../Redux/Slices/products";
 import Header from "../Components/Header";
 import ProductEdit from "../Components/ProductEdit";
-import { isAuthenticated } from "../Services/handleLocalStorage";
-import { useNavigate } from "react-router";
 import handleRefresh from "../Services/handleRefresh";
 
 export default function Products() {

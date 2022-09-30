@@ -1,14 +1,14 @@
 {
   "products": [
     {
-      "id": 1,
       "name": "Banana",
       "isPerishable": true,
       "manufacturingDate": "2022-10-10",
       "expirationDate": "2022-10-20",
       "price": 2.99,
       "unity": "1 kg",
-      "imgUrl": "https://images.unsplash.com/photo-1587334206596-c0f9f7dccbe6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=881&q=80"
+      "imgUrl": "https://images.unsplash.com/photo-1587334206596-c0f9f7dccbe6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=881&q=80",
+      "id": 1
     },
     {
       "id": 2,
@@ -29,6 +29,36 @@
       "unity": "1 kg",
       "id": 3,
       "imgUrl": "https://images.unsplash.com/photo-1557925922-dac32ff4429f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80"
+    },
+    {
+      "name": "Tomate",
+      "isPerishable": true,
+      "manufacturingDate": "2022-09-29",
+      "expirationDate": "2022-10-01",
+      "price": "5",
+      "unity": "1 kg",
+      "imgUrl": "https://images.unsplash.com/photo-1608022749628-3251d92cdd79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "id": 4
+    },
+    {
+      "name": "Manga",
+      "isPerishable": true,
+      "manufacturingDate": "2022-09-28",
+      "expirationDate": "2022-10-25",
+      "price": "4.50",
+      "unity": "1 kg",
+      "imgUrl": "https://images.unsplash.com/photo-1553279768-865429fa0078?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
+      "id": 5
+    },
+    {
+      "name": "Feijão",
+      "isPerishable": false,
+      "manufacturingDate": "2022-09-13",
+      "expirationDate": "",
+      "price": "2.50",
+      "unity": "1 kg",
+      "imgUrl": "https://images.unsplash.com/photo-1564894809611-1742fc40ed80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+      "id": 6
     }
   ],
   "users": [

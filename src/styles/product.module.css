@@ -6,8 +6,7 @@
   gap: 2rem;
   width: 100%;
   padding: 2rem;
-  height: 100vh;
-  /* background-color: crimson; */
+  height: fit-content;
   overflow-x: hidden;
   position: relative;
 }
@@ -19,13 +18,11 @@
 }
 
 .product_cart {
-  /* display: flex; */
   padding: 0.5rem 0.5rem;
   width: 15rem;
   height: fit-content;
   border: 1px solid black;
   border-radius: 5px;
-  /* box-shadow: 5px 10px #888888; */
 }
 
 .product__cart_name_img {
@@ -50,7 +47,7 @@
 
 .product_cart__price {
   display: flex;
-  gap: 1rem;  /* gap: 1px; */
+  gap: 1rem; 
   justify-content: space-between;
 }
 
