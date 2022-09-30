@@ -5,6 +5,10 @@ import ProductCard from "../Components/ProductCard";
 import styles from "../styles/product.module.css";
 import { productsToState } from "../Redux/Slices/products";
 import Header from "../Components/Header";
+import ProductEdit from "../Components/ProductEdit";
+import { isAuthenticated } from "../Services/handleLocalStorage";
+import { useNavigate } from "react-router";
+import handleRefresh from "../Services/handleRefresh";
 
 export default function Products() {
   const [edit, setEdit] = useState(null);
@@ -21,14 +25,18 @@ export default function Products() {
   }, []);
 
   useEffect(() => {
+  }, [products]);
 
-  }, [products])
+  useEffect(() => {
+    handleRefresh()
+  }, []);
+
+  
 
   return (
     <>
     <Header />
     <div className={styles.producs_page}>
-      {products && console.log(products)}
       {products && 
         products.map(
           ({
@@ -40,10 +48,22 @@ export default function Products() {
             price,
             unity,
             imgUrl,
-          }) => (
+          }, index) => (
             <>
             {edit === id ? (
-              null
+              <ProductEdit
+              key={`${name}-${index}`}
+              id={id}
+              name={name}
+              isPerishable={isPerishable}
+              manufacturingDate={manufacturingDate}
+              expirationDate={expirationDate}
+              price={price}
+              unity={unity}
+              imgUrl={imgUrl}
+              getProducts={getProducts}
+              setEdit={setEdit}
+            />
             ) 
             : 
             (

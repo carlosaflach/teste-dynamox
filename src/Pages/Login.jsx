@@ -100,13 +100,13 @@ export default function Login() {
             </InputGroup>
           </label>
         </div>
-        <div className={styles.btns}>
+        <div className={styles.login__btns}>
           <Button
             colorScheme="green"
             size="md"
             disabled={!enableButton}
             onClick={(e) => {handleLogin(e)}}
-            width="sm"
+            // width="sm"
           >
             Login
           </Button>
@@ -120,7 +120,7 @@ export default function Login() {
           <Button
             colorScheme="green"
             size="md"
-            width="sm"
+            // width="sm"
             onClick={() => navigate('/register') }
           >
             Register

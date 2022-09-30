@@ -42,13 +42,13 @@ export default function ProductCard({
         />
       </div>
       <div className={styles.product_cart__date}>
+      <p>Produto perecível: {isPerishable ? "Sim" : "Não"}</p>
         <p>Data de Fabricação: {formatDate(manufacturingDate)}</p>
         <p>
           {isPerishable
             ? `Data de Validade: ${formatDate(expirationDate)}`
             : "Data de Validade: Não expira"}
         </p>
-        <p>Produto perecível: {isPerishable ? "Sim" : "Não"}</p>
       </div>
       <div className={styles.product_cart__price}>
         <p>Preço: R$ {Number(price).toFixed(2)}</p>
@@ -67,18 +67,9 @@ export default function ProductCard({
           aria-label="Delete Product"
           size="sm"
           icon={<EditIcon />}
-          onClick={setEdit(id)}
+          onClick={() => setEdit(id)}
         />
       </div>
     </div>
   );
 }
-
-ProductCard.propTypes = {
-  expirationDate: PropTypes.string.isRequired,
-  isPerishable: PropTypes.string.isRequired,
-  manufacturingDate: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  unity: PropTypes.string.isRequired,
-};

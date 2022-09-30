@@ -20,8 +20,37 @@
     border-radius: 1rem;
 }
 
-.btns {
+.login__btns {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.login__btns Button {
+  width: 24rem;
+}
+
+/**************************/
+/* BELOW 704px (Smaller Tablets) */
+/**************************/
+
+@media (max-width: 44em) {
+  .loginContent {
+    width: 20rem;
+  }
+
+  .login__btns Button {
+    width: 12rem;
+  }
+}
+
+/**************************/
+/* BELOW 544px (Phones) */
+/**************************/
+
+@media (max-width: 34em) {
+  .loginContent {
+    width: 15rem;
+    padding: 1.5rem;
+  }
 }

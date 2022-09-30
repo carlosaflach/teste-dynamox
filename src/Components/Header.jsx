@@ -11,6 +11,7 @@ export default function Header() {
   const dispatch = useDispatch();
   const url = useLocation();
   const user = useSelector((state) => state.login.userName);
+  const products = useSelector((state) => state.products);
 
 
   const handleClick = () => {
@@ -31,7 +32,11 @@ export default function Header() {
           <Button colorScheme="green" onClick={() => navigate("/products/create")}>
             Novo Produto
           </Button>
-          <span>{`Olá ${user}, esses são os seus produtos!!`}</span>
+          {products.length ? (<span>{`Olá ${user}, esses são os seus produtos!!`}</span>) :
+          (
+            <span>{`${user} cadastre seus produtos clicando no botão Novo Produto`}</span>
+          )}
+          
           <Button colorScheme="green" onClick={handleClick}>
             Logout
           </Button>
