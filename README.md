@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Instruções
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Faça o donwnload do repositório, via SSH ou outro método.
+   
+2. Abra o projeto na raiz, e no seu terminal rode o comando: `npm install`.
+   
+3. Após isso, inicie o servidor com o comando: `npm run dev:api`.
 
-## Available Scripts
+4. E para finalizar, inicie a aplicação com o comando: `npm start`.
 
-In the project directory, you can run:
 
-### `npm start`
+## Descrição
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Este foi um desafio técnico realizado durante o processo seletivo para a empresa Dynamox. </br>
+O desafio era criar uma aplicação React para realizar um CRUD de produtos, sendo necessário respeitar alguns requisitos, dentre eles: </br> </br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Aplicação deverá ter telas de criação, edição e listagem de produtos, com os campos:
+  * Nome.
+  * Data de Fabricação.
+  * Produto Pericível.
+  * Data de Validade.
+  * Preço.
 
-### `npm test`
+* O usuário só deverá ter acesso às rotas de criação, edição e listagem de produtos caso esteja autenticado.
+* O usuário só poderá cadastrar data de validade caso o produto seja perecível.
+* A data de fabricação nunca deverá ser maior que a data de validade.
+* O preço deverá estar em reais (R$).
+* A tela de listagem deverá ter a possibilidade de ordenação dos campos e com uma paginação de 10 produtos por página.
+* O backend deve ser simulado com json-server, que cria uma API REST fake.
+* Requests à API devem simular o envio do token JWT, que também poderá ser fake.
+  
+### Tecnologias, frameworks e bibliotecas utilizados:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* React.js
+* Redux
+* Chakra UI
+  
 
-### `npm run build`
+## Created By:
+- Linkedin - [Carlos A.](https://www.linkedin.com/in/carlosafonsoflach/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
